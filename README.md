@@ -1,4 +1,3 @@
-
 # Black Dog - Sistema de Transferencias
 
 Aplicación web para cargar archivos `.txt` con pedidos y generar transferencias internas en Odoo automáticamente.
@@ -12,14 +11,20 @@ Aplicación web para cargar archivos `.txt` con pedidos y generar transferencias
 - Preparado para deployment en Railway.app
 - Soporte para dominio personalizado: `transferencias.blackdogpanama.com`
 
-## Cómo desplegar en Railway
-1. Sube este proyecto a GitHub
-2. En Railway:
-   - Click en "New Project"
-   - Elige "Deploy from GitHub"
-   - Railway detectará el Procfile automáticamente
-3. Conecta tu dominio desde "Settings > Custom Domain"
+## Despliegue en Railway
+1. Sube este proyecto a GitHub.
+2. En Railway, crea un nuevo proyecto y selecciona tu repo.
+3. Agrega variables de entorno desde `.env.example` en **Settings → Variables**.
+4. Railway usará `Procfile` para desplegar automáticamente.
+5. Conecta tu dominio en **Settings → Domains** con un registro CNAME.
 
-## Usuarios de prueba
-- admin / blackdog123
-- operaciones / perritos2025
+## Uso local
+1. Renombra `.env.example` a `.env` y ajusta valores.
+2. Instala dependencias:
+   ```
+   pip install -r requirements.txt
+   ```
+3. Corre local:
+   ```
+   flask run --host=0.0.0.0 --port=5000
+   ```
